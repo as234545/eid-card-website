@@ -11,24 +11,24 @@
                                <img src= "{{ url_for('static', filename = user_image  ) }} " alt="User Image2">
                 </div>
                 <div class="col-lg-4">
-               
+
                 </div>
 
-                  </div>  
+                  </div>
 
                 <br><br>
 
  <div class="container">
   <div class="row">
     <div class="col">
- 
+
     </div>
 
 
     <!--------------------------------------------------->
       {% if 'blue' in color  %}
     <div class="col-5">
-                     <form action = '{{ url_for("/DownloadBlue")}}' method = "POST"  enctype = "multipart/form-data" >
+                     <form action ="/DownloadBlue" method = "POST"  enctype = "multipart/form-data" >
   <input type="text" class="form-control" placeholder="Username"  name="username"  aria-label="Username" aria-describedby="basic-addon1">
     <br>
   <div align="center">
@@ -37,10 +37,10 @@
        <!-- class="btn btn-outline-secondary"-->
 
   </div>
-  
+
      </form>
-    </div>  
-        {% elif 'pink'  in color %} 
+    </div>
+        {% elif 'pink'  in color %}
            <div class="col-5">
                      <form action = "/DownloadPink" method = "POST"  enctype = "multipart/form-data" >
   <input type="text" class="form-control" placeholder="Username"  name="username"  aria-label="Username" aria-describedby="basic-addon1">
@@ -51,9 +51,9 @@
        <!-- class="btn btn-outline-secondary"-->
 
   </div>
-  
+
      </form>
-    </div>  
+    </div>
         {% else %}
                   <div class="col-5">
                      <form action = "/DownloadOrange" method = "POST"  enctype = "multipart/form-data" >
@@ -65,14 +65,14 @@
        <!-- class="btn btn-outline-secondary"-->
 
   </div>
-  
+
      </form>
-    </div>  
+    </div>
 
 
             {% endif %}
-      <!--------------------------------------------------->     
-        
+      <!--------------------------------------------------->
+
 
     <div class="col">
 
@@ -81,8 +81,8 @@
    </div>
 
         </div>
-  
+
     </div>
     <!-- Banner Section End -->
-  
+
     {% endblock %}

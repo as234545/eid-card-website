@@ -1,0 +1,59 @@
+{%extends  "layout.html" %}
+
+{% block body %}
+    <!-- Banner Section Begin -->
+    <div class="banner-section spad">
+        <div class="container-fluid">
+
+       {% with messages = get_flashed_messages() %}
+    {% if messages%}
+      {% for message in messages %}
+      <div class= "alert alert-warning alert-dismissible" role = "alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        {{ message }}
+      </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                         <a href="/blue/">
+                        <img src= "{{ url_for('static', filename='img/blue.png' ) }} "  href="/my-link/" alt="blue">
+
+                        <div class="inner-text">
+                            <h4>blue</h4>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                         <a href="/orange/">
+                        <img src= "{{ url_for('static', filename='img/orange.png' ) }} " alt="" >
+                        <div class="inner-text">
+                            <h4>orange</h4>
+                        </div>
+                           </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                         <a href="/pink/">
+                        <img src= "{{ url_for('static', filename='img/pink.png' ) }} " alt="">
+                        <div class="inner-text">
+                            <h4>pink</h4>
+                        </div>
+                           </a>
+                    </div>
+                </div>
+                <h1>
+              
+                </h1>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+    {% endblock %}

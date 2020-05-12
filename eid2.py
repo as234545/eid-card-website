@@ -3,7 +3,7 @@ import os
 import secrets
 from PIL import Image
 from PIL import ImageFont
-from PIL import ImageDraw 
+from PIL import ImageDraw
 import requests
 
 PEOPLE_FOLDER = os.path.join('static')
@@ -23,7 +23,7 @@ def hello():
 	draw = ImageDraw.Draw(img)
 	font = ImageFont.truetype("Aaargh.ttf", 150)
 
-	draw.text((0, 0),"Sample Text",(255,255,255), font=font) 
+	draw.text((0, 0),"Sample Text",(255,255,255), font=font)
 	#ha = user_image.text((10,10), "Halah", fill=(255,255,0))
 	#img.save("C:/Users/hh577/ZKCloud/eid/static/test002.png")
 	img.save(secrets.token_hex(15)+'.png')
@@ -32,7 +32,7 @@ def hello():
 	#fp = "C:/Users/hh577/ZKCloud/eid/static/background.png"
 	#with open(fp, 'w') as f:
 	#		Image.save(f)
-	
+
 	return render_template("index.html", user_image = user_image )
 
 @app.route('/index')
@@ -70,9 +70,9 @@ def DownloadBlue ():
 	img = Image.open(os.path.join('blue.png'))
 	draw = ImageDraw.Draw(img)
 	font = ImageFont.truetype("Aaargh.ttf", 150)
-	draw.text((0, 0),POST_USERNAME,(255,255,255), font=font) 
+	draw.text((0, 0),POST_USERNAME,(255,255,255), font=font)
 	img.save(secrets.token_hex(15)+'.png')
-	flash('You were successfully logged in')
+	flash('تم تحميل الصورة بنجاح')
 	return redirect(url_for('show_index2'))
 
 
@@ -83,7 +83,7 @@ def DownloadOrange ():
 	img = Image.open(os.path.join('orange.png')) #"C:/Users/hh577/ZKCloud/eid/orange.png"
 	draw = ImageDraw.Draw(img)
 	font = ImageFont.truetype("Aaargh.ttf", 150)
-	draw.text((0, 0),POST_USERNAME,(255,255,255), font=font) 
+	draw.text((0, 0),POST_USERNAME,(255,255,255), font=font)
 	img.save(secrets.token_hex(15)+'.png')
 	flash('You were successfully logged in')
 	return redirect(url_for('show_index2'))
@@ -96,7 +96,7 @@ def DownloadPink ():
 	img = Image.open(os.path.join('pink.png'))
 	draw = ImageDraw.Draw(img)
 	font = ImageFont.truetype("Aaargh.ttf", 150)
-	draw.text((0, 0),POST_USERNAME,(255,255,255), font=font) 
+	draw.text((0, 0),POST_USERNAME,(255,255,255), font=font)
 	img.save(secrets.token_hex(15)+'.png')
 	flash('You were successfully logged in')
 	return redirect(url_for('show_index2'))

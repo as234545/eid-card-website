@@ -1,88 +1,76 @@
 {% extends  "layout.html" %}
 {% block body %}
-
-    <!-- Banner Section Begin -->
-    <div class="banner-section spad">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4">
-                </div>
-                <div class="col-lg-4">
-                               <img src= "{{ url_for('static', filename = user_image  ) }} " alt="User Image2">
-                </div>
-                <div class="col-lg-4">
-
-                </div>
-
-                  </div>
-
-                <br><br>
-
- <div class="container">
-  <div class="row">
-    <div class="col">
-
-    </div>
-
-
-    <!--------------------------------------------------->
-      {% if 'blue' in color  %}
-    <div class="col-5">
-                     <form action ="/DownloadBlue" method = "POST"  enctype = "multipart/form-data" >
-  <input type="text" class="form-control" placeholder="Username"  name="username"  aria-label="Username" aria-describedby="basic-addon1">
-    <br>
-  <div align="center">
-        <button type="submit" class="btn btn-outline-secondary btn-lg btn-block" >Download</button>
-
-       <!-- class="btn btn-outline-secondary"-->
-
-  </div>
-
-     </form>
-    </div>
-        {% elif 'pink'  in color %}
-           <div class="col-5">
-                     <form action = "/DownloadPink" method = "POST"  enctype = "multipart/form-data" >
-  <input type="text" class="form-control" placeholder="Username"  name="username"  aria-label="Username" aria-describedby="basic-addon1">
-    <br>
-  <div align="center">
-        <button type="submit" class="btn btn-outline-secondary btn-lg btn-block" >Download</button>
-
-       <!-- class="btn btn-outline-secondary"-->
-
-  </div>
-
-     </form>
-    </div>
-        {% else %}
-                  <div class="col-5">
-                     <form action = "/DownloadOrange" method = "POST"  enctype = "multipart/form-data" >
-  <input type="text" class="form-control" placeholder="Username"  name="username"  aria-label="Username" aria-describedby="basic-addon1">
-    <br>
-  <div align="center">
-        <button type="submit" class="btn btn-outline-secondary btn-lg btn-block" >Download</button>
-
-       <!-- class="btn btn-outline-secondary"-->
-
-  </div>
-
-     </form>
-    </div>
-
-
-            {% endif %}
-      <!--------------------------------------------------->
-
-
-    <div class="col">
-
-    </div>
-  </div>
-   </div>
-
+  <!-- Banner Section Begin -->
+  <div class="banner-section spad">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4">
         </div>
-
+        <div class="col-lg-4">
+          <img src= "{{ url_for('static', filename = user_image  ) }} " alt="User Image2">
+        </div>
+        <div class="col-lg-4">
+        </div>
+      </div>
+      <br><br>
+      <div class="container">
+        <div class="row">
+          <!--      <input type="text" class="form-control" placeholder="Username"  name="username"  aria-label="Username" aria-describedby="basic-addon1">-->
+          <div class="col">
+          </div>
+          <!--------------------------------------------------->
+          {% if 'blue' in color  %}
+            <div class="col-12 col-md-5">
+              <form action = "/DownloadBlue" method = "POST"  enctype = "multipart/form-data" >
+                 <div class="input-group input-group-md mb-6" >
+                  
+                  <input type="text" class="form-control" placeholder="Username"  name="username"  aria-label="Username" aria-describedby="basic-addon1">
+                  
+                </div>
+                <br>
+                <div align="center">
+                  <button type="submit" class="btn btn-outline-secondary btn-lg btn-block" >Download</button>
+                  <!-- class="btn btn-outline-secondary"-->
+                </div>
+              </form>
+            </div>
+            {% elif 'pink'  in color %}
+            <div class="col-12 col-md-5">
+              <form action = "/DownloadPink" method = "POST"  enctype = "multipart/form-data" >
+                <div class="input-group input-group-md mb-6" >
+                  
+                  <input type="text" class="form-control" placeholder="Username"  name="username"  aria-label="Username" aria-describedby="basic-addon1">
+                  
+                </div>
+                <br>
+                <div align="center">
+                  <button type="submit" class="btn btn-outline-secondary btn-lg btn-block" >Download</button>
+                  <!-- class="btn btn-outline-secondary"-->
+                </div>
+              </form>
+            </div>
+          {% else %}
+            <div class="col-12 col-md-5">
+              <form action = "/DownloadOrange" method = "POST"  enctype = "multipart/form-data" >
+                 <div class="input-group input-group-md mb-6" >
+                  
+                  <input type="text" class="form-control" placeholder="Username"  name="username"  aria-label="Username" aria-describedby="basic-addon1">
+                  
+                </div>
+                <br>
+                <div align="center">
+                  <button type="submit" class="btn btn-outline-secondary btn-lg btn-block" >Download</button>
+                  <!-- class="btn btn-outline-secondary"-->
+                </div>
+              </form>
+            </div>
+          {% endif %}
+          <!--------------------------------------------------->
+          <div class="col">
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Banner Section End -->
-
-    {% endblock %}
+  </div>
+  <!-- Banner Section End -->
+{% endblock %}

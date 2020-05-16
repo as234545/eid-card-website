@@ -28,7 +28,7 @@ def show_index2():
 
 @app.route('/blue/')
 def blue():
-  user_image = os.path.join('blue.png')
+  user_image = os.path.join('eid_cards-01.png')
   color = 'blue'
   return render_template("index3.html", user_image = user_image,  color = color)
 
@@ -50,7 +50,7 @@ def DownloadBlue ():
 		output =  io.BytesIO()
 		POST_USERNAME = str(request.form['username'])
 		print(POST_USERNAME)
-		img = Image.open(os.path.join('blue.png'))
+		img = Image.open(os.path.join('eid_cards-01.png'))
 		buffer = ImageDraw.Draw(img)
 		font = ImageFont.truetype("Aaargh.ttf", 150)
 		buffer.text((0, 0),POST_USERNAME,(255,255,255), font=font)

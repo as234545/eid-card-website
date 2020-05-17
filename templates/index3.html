@@ -49,6 +49,21 @@
                 </div>
               </form>
             </div>
+                  {% elif 'yallow'  in color %}
+            <div class="col-12 col-md-5">
+              <form action = "/DownloadYallow" method = "POST"  enctype = "multipart/form-data" >
+                <div class="input-group input-group-md mb-6" >
+                  
+                  <input type="text" class="form-control" placeholder="Username"  name="username"  aria-label="Username" aria-describedby="basic-addon1">
+                  
+                </div>
+                <br>
+                <div align="center">
+                  <button type="submit" class="btn btn-outline-secondary btn-lg btn-block" >Download</button>
+                  <!-- class="btn btn-outline-secondary"-->
+                </div>
+              </form>
+            </div>
           {% else %}
             <div class="col-12 col-md-5">
               <form action = "/DownloadOrange" method = "POST"  enctype = "multipart/form-data" >

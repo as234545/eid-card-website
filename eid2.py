@@ -35,7 +35,11 @@ def show_index2():
 
 @app.route('/blue/')
 def blue():
+<<<<<<< HEAD
   user_image = os.path.join('eid_cards_names-01.png')
+=======
+  user_image = os.path.join('eid_cards-01.png')
+>>>>>>> ec5e4e7b3caf766fd7eec178cb25183f041b449d
   color = 'blue'
   return render_template("index3.html", user_image = user_image,  color = color)
 
@@ -62,12 +66,17 @@ def DownloadBlue ():
 	try:
 		output =  io.BytesIO()
 		POST_USERNAME = str(request.form['username'])
+<<<<<<< HEAD
 		reshaped_text = arabic_reshaper.reshape(POST_USERNAME)    # correct its shape
 		bidi_text = get_display(reshaped_text) 
 		print(bidi_text)
 		img = Image.open(os.path.join('static/eid_cards-01.png'))
 		imgW, imgH = img.size
 		print(imgW)
+=======
+		print(POST_USERNAME)
+		img = Image.open(os.path.join('eid_cards-01.png'))
+>>>>>>> ec5e4e7b3caf766fd7eec178cb25183f041b449d
 		buffer = ImageDraw.Draw(img)
 		font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
 		w, h = buffer.textsize(bidi_text, font)

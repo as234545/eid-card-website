@@ -35,29 +35,25 @@ def show_index2():
 
 @app.route('/blue/')
 def blue():
-<<<<<<< HEAD
-  user_image = os.path.join('eid_cards_names-01.png')
-=======
-  user_image = os.path.join('eid_cards-01.png')
->>>>>>> ec5e4e7b3caf766fd7eec178cb25183f041b449d
+  user_image = os.path.join('img/eid_cards_names-01.png')
   color = 'blue'
   return render_template("index3.html", user_image = user_image,  color = color)
 
 @app.route('/orange/')
 def orange():
-  user_image = os.path.join('eid_cards_names-02.png')
+  user_image = os.path.join('img/eid_cards_names-02.png')
   color = 'orange'
   return render_template("index3.html", user_image = user_image ,  color = color)
 
 @app.route('/pink/')
 def pink():
-  user_image = os.path.join('eid_cards_names-03.png')
+  user_image = os.path.join('img/eid_cards_names-03.png')
   color = 'pink'
   return render_template("index3.html", user_image = user_image,  color = color)
 
 @app.route('/yallow/')
 def yallow():
-  user_image = os.path.join('eid_cards_names-04.png')
+  user_image = os.path.join('img/eid_cards_names-04.png')
   color = 'yallow'
   return render_template("index3.html", user_image = user_image,  color = color)
 
@@ -66,17 +62,10 @@ def DownloadBlue ():
 	try:
 		output =  io.BytesIO()
 		POST_USERNAME = str(request.form['username'])
-<<<<<<< HEAD
 		reshaped_text = arabic_reshaper.reshape(POST_USERNAME)    # correct its shape
 		bidi_text = get_display(reshaped_text) 
-		print(bidi_text)
-		img = Image.open(os.path.join('static/eid_cards-01.png'))
+		img = Image.open(os.path.join('static/img/eid_cards-01.png'))
 		imgW, imgH = img.size
-		print(imgW)
-=======
-		print(POST_USERNAME)
-		img = Image.open(os.path.join('eid_cards-01.png'))
->>>>>>> ec5e4e7b3caf766fd7eec178cb25183f041b449d
 		buffer = ImageDraw.Draw(img)
 		font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
 		w, h = buffer.textsize(bidi_text, font)
@@ -103,10 +92,8 @@ def DownloadOrange ():
 		POST_USERNAME = str(request.form['username'])
 		reshaped_text = arabic_reshaper.reshape(POST_USERNAME)    # correct its shape
 		bidi_text = get_display(reshaped_text) 
-		print(bidi_text)
-		img = Image.open(os.path.join('static/eid_cards-02.png'))
+		img = Image.open(os.path.join('static/img/eid_cards-02.png'))
 		imgW, imgH = img.size
-		print(imgW)
 		buffer = ImageDraw.Draw(img)
 		font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
 		w, h = buffer.textsize(bidi_text, font)
@@ -133,16 +120,13 @@ def DownloadPink ():
 		POST_USERNAME = str(request.form['username'])
 		reshaped_text = arabic_reshaper.reshape(POST_USERNAME)    # correct its shape
 		bidi_text = get_display(reshaped_text) 
-		print(bidi_text)
-		img = Image.open(os.path.join('static/eid_cards-03.png'))
+		img = Image.open(os.path.join('static/img/eid_cards-03.png'))
 		imgW, imgH = img.size
-		print(imgW)
 		buffer = ImageDraw.Draw(img)
 		font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
 		w, h = buffer.textsize(bidi_text, font)
 		imgW, imgH = img.size
 		nullH = (imgH-h)
-		print(imgH, h)
 
 		buffer.text(((imgW-w)/2, nullH-1000),bidi_text,(100,114,130), font=font)
 		img.save(output, format="png", optimize=True)
@@ -164,9 +148,8 @@ def DownloadYallow ():
 		reshaped_text = arabic_reshaper.reshape(POST_USERNAME)    # correct its shape
 		bidi_text = get_display(reshaped_text) 
 		print(bidi_text)
-		img = Image.open(os.path.join('static/eid_cards-04.png'))
+		img = Image.open(os.path.join('static/img/eid_cards-04.png'))
 		imgW, imgH = img.size
-		print(imgW)
 		buffer = ImageDraw.Draw(img)
 		font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
 		w, h = buffer.textsize(bidi_text, font)

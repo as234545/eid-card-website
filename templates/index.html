@@ -1,0 +1,63 @@
+{%extends  "layout.html" %}
+{% block body %}
+    <!-- Banner Section Begin -->
+    <div class="banner-section spad">
+        <div class="container-fluid">
+            {% with messages = get_flashed_messages() %}
+            {% if messages%}
+                {% for message in messages %}
+                    <div class= "alert alert-warning alert-dismissible" role = "alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="single-banner">
+                    <a href="/blue/">
+                        <img src= "{{ url_for('static', filename='img/eid_cards-01.png' ) }} "  alt="img one"  >
+                        <div class="inner-text">
+                         <!--   <h4>أزرق</h4>-->
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="single-banner">
+                    <a href="/orange/">
+                       <img src= "{{ url_for('static', filename='img/eid_cards-02.png' ) }} " alt="img two" >
+                        <div class="inner-text">
+                          <!--  <h4>برتقالي</h4>-->
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="single-banner">
+                    <a href="/pink/">
+                        <img src= "{{ url_for('static', filename='img/eid_cards-03.png' ) }} " alt="">
+                        <div class="inner-text">
+                        <!--    <h4>زهري</h4>-->
+                        </div>
+                    </a>
+                </div>
+            </div>
+                   <div class="col-lg-3">
+                <div class="single-banner">
+                    <a href="/yellow/">
+                        <img src= "{{ url_for('static', filename='img/eid_cards-04.png' ) }} " alt="">
+                        <div class="inner-text">
+                        <!--    <h4>زهري</h4>-->
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <h1>
+            </h1>
+        </div>
+    </div>
+</div>
+<!-- Banner Section End -->
+{% endblock %}

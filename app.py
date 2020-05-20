@@ -12,6 +12,8 @@ import arabic_reshaper
 
 # install: pip install python-bidi
 from bidi.algorithm import get_display
+# pip install langdetect
+from langdetect import detect
 
 
 
@@ -56,10 +58,15 @@ def DownloadBlue ():
 		POST_USERNAME = str(request.form['username'])
 		reshaped_text = arabic_reshaper.reshape(POST_USERNAME)    # correct its shape
 		bidi_text = get_display(reshaped_text) 
+
 		img = Image.open(os.path.join('static/img/eid_cards-01.png'))
 		imgW, imgH = img.size
 		buffer = ImageDraw.Draw(img)
-		font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
+		if detect(POST_USERNAME) != 'ar':
+			font = ImageFont.truetype("static/fonts/Samim-Bold.ttf", 150 )
+		else:
+			font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
+
 		w, h = buffer.textsize(bidi_text, font)
 		imgW, imgH = img.size
 		nullH = (imgH-h)
@@ -69,7 +76,7 @@ def DownloadBlue ():
 		img.save(output, format="png", optimize=True)
 		file_name = secrets.token_hex(15)+'.png'
 		output.seek(0)
-		flash('تم تحميل الصورة بنجاح')
+		#flash('تم تحميل الصورة بنجاح')
 		return send_file(output, mimetype="image/png",as_attachment=True , attachment_filename=file_name )
 
 	except Exception as e:
@@ -87,7 +94,10 @@ def DownloadOrange ():
 		img = Image.open(os.path.join('static/img/eid_cards-02.png'))
 		imgW, imgH = img.size
 		buffer = ImageDraw.Draw(img)
-		font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
+		if detect(POST_USERNAME) != 'ar':
+			font = ImageFont.truetype("static/fonts/Samim-Bold.ttf", 150 )
+		else:
+			font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
 		w, h = buffer.textsize(bidi_text, font)
 		imgW, imgH = img.size
 		nullH = (imgH-h)
@@ -97,7 +107,7 @@ def DownloadOrange ():
 		img.save(output, format="png", optimize=True)
 		file_name = secrets.token_hex(15)+'.png'
 		output.seek(0)
-		flash('تم تحميل الصورة بنجاح')
+		#flash('تم تحميل الصورة بنجاح')
 		return send_file(output, mimetype="image/png",as_attachment=True , attachment_filename=file_name)
 
 	except Exception as e:
@@ -115,7 +125,10 @@ def DownloadPink ():
 		img = Image.open(os.path.join('static/img/eid_cards-03.png'))
 		imgW, imgH = img.size
 		buffer = ImageDraw.Draw(img)
-		font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
+		if detect(POST_USERNAME) != 'ar':
+			font = ImageFont.truetype("static/fonts/Samim-Bold.ttf", 150 )
+		else:
+			font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
 		w, h = buffer.textsize(bidi_text, font)
 		imgW, imgH = img.size
 		nullH = (imgH-h)
@@ -124,7 +137,7 @@ def DownloadPink ():
 		img.save(output, format="png", optimize=True)
 		file_name = secrets.token_hex(15)+'.png'
 		output.seek(0)
-		flash('تم تحميل الصورة بنجاح')
+		#flash('تم تحميل الصورة بنجاح')
 		return send_file(output, mimetype="image/png",as_attachment=True , attachment_filename=file_name)
 
 	except Exception as e:
@@ -143,7 +156,10 @@ def DownloadYellow ():
 		img = Image.open(os.path.join('static/img/eid_cards-04.png'))
 		imgW, imgH = img.size
 		buffer = ImageDraw.Draw(img)
-		font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
+		if detect(POST_USERNAME) != 'ar':
+			font = ImageFont.truetype("static/fonts/Samim-Bold.ttf", 150 )
+		else:
+			font = ImageFont.truetype("static/fonts/ArbFONTS-GE-SS-Unique-Bold.otf", 150 )
 		w, h = buffer.textsize(bidi_text, font)
 		imgW, imgH = img.size
 		nullH = (imgH-h)
@@ -153,7 +169,7 @@ def DownloadYellow ():
 		img.save(output, format="png", optimize=True)
 		file_name = secrets.token_hex(15)+'.png'
 		output.seek(0)
-		flash('تم تحميل الصورة بنجاح')
+		#flash('تم تحميل الصورة بنجاح')
 		return send_file(output, mimetype="image/png",as_attachment=True , attachment_filename=file_name)
 
 	except Exception as e:
